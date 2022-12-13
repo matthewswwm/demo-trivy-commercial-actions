@@ -8,7 +8,7 @@ on:
 
 env:
   # Registry name as configured in Aqua integrations
-  IMAGE_REGISTRY: Docker
+  IMAGE_REGISTRY: matt_reg
 
 jobs:
 
