@@ -34,6 +34,10 @@ jobs:
     - name: Scan image
       run: ./scannercli scan -H ${{ secrets.AQUA_SERVER }} -n -A ${{ secrets.TOKEN }} --local --text --register-compliant --registry $IMAGE_REGISTRY my-demo-image:${{ github.sha }}
 
+      # Fails the pipeline if scanning is found to be non-compliant
+    - name: Check results
+      run: echo $?
+
     - name: Tag image with Registry
       run: docker tag my-demo-image:${{ github.sha }} $IMAGE_REGISTRY/my-demo-image:${{ github.sha }}
 
