@@ -66,3 +66,9 @@
     * `TOKEN`
         * `AQUA_SERVER` & `TOKEN` are the  SaaS account url and user token from before
 7. Test the workflow with a commit; e.g. edit the README file.
+
+## Troubleshooting
+
+### Timeout error
+
+If you're hitting the following error `Failed to do request: Post "***/scanmgr/twirp/scanmgr.AuthManger/AuthenticateScanner": dial tcp ************: i/o timeout`, investigate the header being given. Consider changing to https and confirming `-n` flag for no tls verification is used.
