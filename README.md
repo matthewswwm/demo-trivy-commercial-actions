@@ -45,7 +45,7 @@
 
         # Scanner authenticates to the server (-H) using a token (-A) but this can be replaced with user and password auth
         # image is registered if found compliant (--register-compliant) as belonging to the final registry (--registry).
-        # the --local flag indicates a locally built image not available in the registry yet
+        # the --local flag indicates a locally built image not available in the registry yet.
         - name: Scan image
         run: ./scannercli scan -H ${{ secrets.AQUA_SERVER }} -n -A ${{ secrets.TOKEN }} --local --text --register-compliant --registry $IMAGE_REGISTRY my-demo-image:${{ github.sha }} --htmlfile 1.html --textfile 2.txt --jsonfile 3.json
 
