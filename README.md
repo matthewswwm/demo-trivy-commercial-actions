@@ -1,4 +1,4 @@
-# scanner-cli branch
+# scanner-cli-secure branch
 
 ## Process
 
@@ -13,7 +13,7 @@
 4. Edit the workflows.yml file in the Github Repo. Reference code below:
 
     ```yaml
-    name: Docker Image CI
+    name: scanner-cli-secure CI
 
     on:
     push:

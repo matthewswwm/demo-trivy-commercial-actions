@@ -1,29 +1,8 @@
 # Updated dockerfile to fix vulnerabilities
-FROM caddy:2.4.0
+FROM docker.io/nginx:1.24
 
-# Update system packages
-RUN apk update && apk upgrade && apk add --no-cache \
-    apk-tools \
-    busybox \
-    git \
-    libcrypto1.1 \
-    libssl1.1 \
-    ssl_client \
-    zlib
-
-# Set up Go environment
-RUN apk add --no-cache go
-
-# Update Go packages
-RUN go get -u github.com/Masterminds/goutils \
-              github.com/lucas-clemente/quic-go \
-              github.com/prometheus/client_golang \
-              golang.org/x/crypto \
-              golang.org/x/net \
-              golang.org/x/text
-
-# Add the index.html file to the Caddy web root
-ADD index.html /usr/share/caddy/index.html
-
-# Clean up Go cache to reduce image size
-RUN go clean -modcache
+# Update and install the specific package
+RUN apt-get update && \
+    apt-get install -y libnghttp2-14 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
