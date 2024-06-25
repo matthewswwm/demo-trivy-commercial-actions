@@ -13,7 +13,7 @@
 4. Edit the workflows.yml file in the Github Repo. Reference code below:
 
     ```yaml
-    name: Docker Image CI
+    name: scanner-cli CI
 
     on:
     push:
