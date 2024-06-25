@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "scanner-cli" ]
+    branches: [ "scanner-cli-secure" ]
   pull_request:
-    branches: [ "scanner-cli" ]
+    branches: [ "scanner-cli-secure" ]
 
 env:
   # Registry name as configured in Aqua integrations
@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-demo-image:${{ github.sha }}
+      run: docker build . --file Dockerfile_secure --tag my-demo-image:${{ github.sha }}
 
       # The following 2 steps can be replaced building the scanner cli within the builder image
     - name: Get Aquasec commercial scanner
