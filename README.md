@@ -61,7 +61,6 @@
     * `AQUAREG_USER`
     * `AQUAREG_PSWD`
         * `AQUAREG_USER` & `AQUAREG_PSWD` are Aqua credentials that should be provided by the product owner. This user needs to be able to download the scannercli.
-
     * `AQUA_SERVER`
     * `TOKEN`
         * `AQUA_SERVER` & `TOKEN` are the  SaaS account url and user token from before
