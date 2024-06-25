@@ -64,8 +64,6 @@
     * `AQUA_SERVER`
     * `TOKEN`
         * `AQUA_SERVER` & `TOKEN` are the SaaS account url and user token from before
-     * `IMAGE_REGISTRY`
-        * `IMAGE_REGISTRY` the name of the aqua registry integration
 7. Test the workflow with a commit; e.g. edit the README file.
 
 ## Troubleshooting
