@@ -5,6 +5,7 @@ FROM caddy:2.4.0
 RUN apk update && apk upgrade && apk add --no-cache \
     apk-tools \
     busybox \
+    git \
     libcrypto1.1 \
     libssl1.1 \
     ssl_client \
