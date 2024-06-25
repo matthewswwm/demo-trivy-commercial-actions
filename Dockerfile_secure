@@ -6,3 +6,9 @@ RUN apt-get update && \
     apt-get remove -y libnghttp2-14 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+# Create a non-root user and group
+RUN groupadd -g 1001 nginxgroup && \
+    useradd -u 1001 -g nginxgroup -s /bin/sh -m nginxuser
+
+USER nginxuser
